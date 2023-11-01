@@ -1,0 +1,9 @@
+.htaccess
+dorabotki.txt
+db.sql
+test.php
+header.php
+classes/*
+.well-known/*
+xls/*
+certs/*
