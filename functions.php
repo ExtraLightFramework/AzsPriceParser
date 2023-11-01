@@ -627,7 +627,7 @@ function azs_save_prices($data) {
 								$tm_upd = $prev_price[0]['yandex_date'];
 							}
 						}
-						_query("UPDATE apar_azs SET `has_prices`=1 WHERE `id`={$azs['id']}");
+						_query("UPDATE apar_azs SET `has_prices`=1".(!empty($data['address'])?",`address`='".addslashes($data['address'])."'":"")." WHERE `id`={$azs['id']}");
 						$ret = _query("INSERT INTO apar_prices (`azs_id`,`fuel_id`,`price`,`tm`,`yandex_date`)
 										VALUES({$azs['id']},{$fuel['id']},{$p['price']},".$tm.",".$tm_upd.")");
 //						if () {
